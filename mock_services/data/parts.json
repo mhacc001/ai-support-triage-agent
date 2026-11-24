@@ -1,0 +1,6 @@
+{
+  "GPU-H100-SXM5-80G": {"name": "GPU module, 80 GB SXM5", "in_stock": 12, "depot": "Austin", "lead_time_days": 1},
+  "NVSWITCH-TRAY-GEN4": {"name": "NVLink switch tray", "in_stock": 0, "depot": "Austin", "lead_time_days": 7},
+  "PSU-3200W-TITANIUM": {"name": "3200W Titanium power supply", "in_stock": 40, "depot": "Austin", "lead_time_days": 1},
+  "FAN-MODULE-HP": {"name": "High-performance fan module", "in_stock": 25, "depot": "Nashville", "lead_time_days": 2}
+}

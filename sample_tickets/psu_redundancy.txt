@@ -1,0 +1,4 @@
+From: Marcus T., Data Center Ops, Contoso Research
+Subject: PSU amber light, redundancy lost on aisrv-04
+
+The BMC on aisrv-04 says "power supply redundancy lost" and one PSU has an amber LED. The server is still running. We swapped the power cord and it is still amber.

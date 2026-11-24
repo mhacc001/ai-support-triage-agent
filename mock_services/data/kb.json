@@ -1,0 +1,64 @@
+[
+  {
+    "id": "KB-1001",
+    "title": "GPU not detected after install or reboot",
+    "tags": ["gpu", "not detected", "missing", "nvidia-smi", "pcie"],
+    "symptoms": "nvidia-smi lists fewer GPUs than installed; OS log shows PCIe link down or the device is absent from lspci.",
+    "steps": [
+      "Confirm the count with nvidia-smi -L and lspci | grep -i nvidia.",
+      "Check the BMC system event log for PCIe or GPU faults.",
+      "Update the GPU baseboard firmware and BIOS to the current validated bundle.",
+      "Reseat the GPU module (power off, follow ESD procedure).",
+      "If the GPU is still missing after reseat and firmware update, replace the GPU module."
+    ],
+    "part_on_failure": "GPU-H100-SXM5-80G"
+  },
+  {
+    "id": "KB-1002",
+    "title": "NVLink errors or degraded GPU-to-GPU bandwidth",
+    "tags": ["nvlink", "bandwidth", "xid", "link errors"],
+    "symptoms": "nvidia-smi nvlink -e shows rising error counters; training jobs slow down or report Xid 74.",
+    "steps": [
+      "Collect nvidia-smi nvlink -s and -e output for every GPU.",
+      "Run the vendor diagnostic (dcgmi diag -r 3).",
+      "If errors stay on the same link after a cold boot, replace the NVLink switch tray."
+    ],
+    "part_on_failure": "NVSWITCH-TRAY-GEN4"
+  },
+  {
+    "id": "KB-1003",
+    "title": "Power supply fault or redundancy lost",
+    "tags": ["psu", "power", "redundancy", "power supply"],
+    "symptoms": "BMC reports PSU failure or 'redundancy lost'; one PSU LED is amber.",
+    "steps": [
+      "Check the PSU status and input voltage in the BMC.",
+      "Swap the power cord and check the PDU outlet.",
+      "If the PSU still reports a fault, replace the PSU (hot-swappable)."
+    ],
+    "part_on_failure": "PSU-3200W-TITANIUM"
+  },
+  {
+    "id": "KB-1004",
+    "title": "GPU thermal throttling",
+    "tags": ["thermal", "throttling", "temperature", "fan", "overheat"],
+    "symptoms": "nvidia-smi -q -d PERFORMANCE shows HW Slowdown or thermal throttle; GPU temperature above 85C.",
+    "steps": [
+      "Check fan status and inlet temperature in the BMC.",
+      "Confirm data center inlet temperature is within spec.",
+      "Replace any failed fan module."
+    ],
+    "part_on_failure": "FAN-MODULE-HP"
+  },
+  {
+    "id": "KB-1005",
+    "title": "BMC / remote management unreachable",
+    "tags": ["bmc", "idrac", "ipmi", "remote management", "unreachable"],
+    "symptoms": "BMC web interface and IPMI do not respond; the host OS still runs.",
+    "steps": [
+      "Ping the BMC address from the management network.",
+      "Reset the BMC from the host OS (ipmitool mc reset cold).",
+      "Update BMC firmware. No hardware replacement is usually needed."
+    ],
+    "part_on_failure": null
+  }
+]

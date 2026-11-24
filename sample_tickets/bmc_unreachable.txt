@@ -1,0 +1,4 @@
+From: Lena K., IT, Fabrikam Labs
+Subject: Can't reach remote management on aisrv-22
+
+We can't log in to the BMC web page on aisrv-22 and IPMI doesn't respond. The OS and our jobs are fine. Nothing changed on our side.

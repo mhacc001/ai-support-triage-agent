@@ -1,0 +1,4 @@
+From: Priya N., ML Platform Lead, Northwind Analytics
+Subject: Only 7 of 8 GPUs showing on node aisrv-17
+
+After a scheduled reboot last night, nvidia-smi on aisrv-17 only lists 7 GPUs. Our training cluster is running but this node is out of the job pool. We already rebooted twice and checked that the BIOS is on the latest version. Can you help?
